@@ -1,72 +1,97 @@
 <!DOCTYPE html>
 <html>
     <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
         <link rel="stylesheet" href="styles.css">
     </head>
     <body>
-       <header>
-            <nav class="navbar bg-body-tertiary">
-                <div class="container-fluid px-5">
-                    <!-- Icono -->
-                    <a class="navbar-brand" href="#">
-                        <img src="icons/instagram.svg" alt="instagram" width="30" height="24">
-                        Instagram
-                    </a>
+        <header>
+            <nav class="bg-body-tertiary py-3">
+                <div class="container-fluid px-3">
+                    <div class="row align-items-center g-2">
 
-                    <div class="d-flex gap-2">
+                        <!-- Logo -->
+                        <div class="col-sm-12 col-md-6 col-lg-6 text-center text-md-start">
+                            <a class="navbar-brand align-items-center" href="#">
+                                <img src="icons/instagram.svg" width="30" height="24" alt="Instagram">
+                                <span class="ms-2">Instagram</span>
+                            </a>
+                        </div>
 
-                        <!-- Boton modal -->
-                        <button type="button" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#Modal1">
-                        Create a new post
-                        </button>
+                        <!-- Botones -->
+                        <div class="col-12 col-md-6">
+                            <div class="d-flex justify-content-center justify-content-md-end gap-2 flex-wrap">
 
-                        <!-- Modal -->
-                        <div class="modal fade" id="Modal1" tabindex="-1" aria-labelledby="ModalLabel1" aria-hidden="true">
-                            <div class="modal-dialog">
-                                <div class="modal-content">
-                                <div class="modal-header">
-                                    <h1 class="modal-title fs-5" id="ModalLabel1">Create a new post</h1>
-                                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                <!-- Botón modal -->
+                                <button type="button" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#Modal1">
+                                    Create a new post
+                                </button>
+
+                                <!-- Menú desplegable -->
+                                <div class="dropdown">
+                                    <a class="btn btn-secondary dropdown-toggle d-flex align-items-center justify-content-center"
+                                    href="#"
+                                    role="button"
+                                    data-bs-toggle="dropdown"
+                                    aria-expanded="false">
+                                        <img src="icons/engranaje.svg" width="30" alt="Configuración">
+                                    </a>
+
+                                    <ul class="dropdown-menu dropdown-menu-end">
+                                        <li><a class="dropdown-item" href="#">profile</a></li>
+                                        <li><a class="dropdown-item" href="#">accesibility</a></li>
+                                        <li><a class="dropdown-item" href="#">Privacy and Data</a></li>
+                                        <li><hr class="dropdown-divider"></li>
+                                        <li><a class="dropdown-item text-danger" href="#">log out</a></li>
+                                    </ul>
                                 </div>
-                                <div class="modal-body">
-                                    <form>
-                                        <div class="mb-3">
-                                            <label for="message-text" class="col-form-label">Caption:</label>
-                                            <textarea class="form-control" id="message-text" placeholder="Add the caption of your post here"></textarea>
-                                        </div>
-                                    </form>
-                                    <button type="button" class="btn btn-light"><img src="icons/camara.svg" width="20px"></button>
-                                    <button type="button" class="btn btn-light"><img src="icons/location.svg" width="20px"></button>
-                                </div>
-                                <div class="modal-footer">
-                                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                                    <button type="button" class="btn btn-success">Publish</button>
-                                </div>
-                                </div>
+
                             </div>
                         </div>
 
-                        <!-- Menu desplegable -->
-                        <div class="dropdown ">
-                            <a class="btn btn-secondary dropdown-toggle d-flex align-items-center justify-content-center" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                                <img src="icons/engranaje.svg" width="30px"  class="me-2">
-                            </a>
-
-                            <ul class="dropdown-menu dropdown-menu-end">
-                                <li><a class="dropdown-item" href="#">profile</a></li>
-                                <li><a class="dropdown-item" href="#">accesibility</a></li>
-                                <li><a class="dropdown-item" href="#">Privacy and Data</a></li>
-                                <li><hr class="dropdown-divider"></li>
-                                <li><a class="dropdown-item text-danger" href="#">log out</a></li>
-                            </ul>
-                        </div>
                     </div>
                 </div>
             </nav>
-        </header>
 
-        <section>
+            <!-- Modal -->
+            <div class="modal fade" id="Modal1" tabindex="-1" aria-labelledby="ModalLabel1" aria-hidden="true">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+
+                        <div class="modal-header">
+                            <h1 class="modal-title fs-5" id="ModalLabel1">Create a new post</h1>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+
+                        <div class="modal-body">
+                            <form>
+                                <div class="mb-3">
+                                    <label for="message-text" class="col-form-label">Caption:</label>
+                                    <textarea class="form-control" id="message-text" placeholder="Add the caption of your post here"></textarea>
+                                </div>
+                            </form>
+
+                            <button type="button" class="btn btn-light">
+                                <img src="icons/camara.svg" width="20" alt="Cámara">
+                            </button>
+                            <button type="button" class="btn btn-light">
+                                <img src="icons/location.svg" width="20" alt="Ubicación">
+                            </button>
+                        </div>
+
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                            <button type="button" class="btn btn-success">Publish</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+    </header>
+
+
+        <section class="mb-3">
             <!-- Botones que cambian -->
             <div class="nav nav-tabs d-flex justify-content-center" role="tablist">
                 <button data-bs-toggle="tab" data-bs-target="#grid" type="button" class="nav-link active"><img src="icons/grid.svg"  width="20px"></button>
@@ -80,17 +105,17 @@
                 <div class="tab-pane fade show active" id="grid">
                     <div class="container-fluid">
                         <div class="row g-2">
-                            <div class="col-4"><img src="https://cdn.pixabay.com/photo/2014/04/15/18/37/yamaha-325061_1280.jpg" class="img-fluid Ad-img"></div>
-                            <div class="col-4"><img src="https://cdn.pixabay.com/photo/2020/09/10/10/27/motorbike-5559999_1280.jpg" class="img-fluid Ad-img"></div>
-                            <div class="col-4"><img src="https://cdn.pixabay.com/photo/2023/08/15/04/09/man-8191214_1280.jpg" class="img-fluid Ad-img"></div>
+                            <div class="col-sm-12 col-md-6 col-lg-4"><img src="https://cdn.pixabay.com/photo/2014/04/15/18/37/yamaha-325061_1280.jpg" class="img-fluid Ad-img"></div>
+                            <div class="col-sm-12 col-md-6 col-lg-4"><img src="https://cdn.pixabay.com/photo/2020/09/10/10/27/motorbike-5559999_1280.jpg" class="img-fluid Ad-img"></div>
+                            <div class="col-sm-12 col-md-6 col-lg-4"><img src="https://cdn.pixabay.com/photo/2023/08/15/04/09/man-8191214_1280.jpg" class="img-fluid Ad-img"></div>
 
-                            <div class="col-4"><img src="https://cdn.pixabay.com/photo/2021/07/16/15/10/motorcycle-6471109_1280.jpg" class="img-fluid Ad-img"></div>
-                            <div class="col-4"><img src="https://cdn.pixabay.com/photo/2023/11/29/20/20/motorcycle-8420282_1280.jpg" class="img-fluid Ad-img"></div>
-                            <div class="col-4"><img src="https://cdn.pixabay.com/photo/2023/11/29/20/20/motorcycle-8420283_1280.jpg" class="img-fluid Ad-img"></div>
+                            <div class="col-sm-12 col-md-6 col-lg-4"><img src="https://cdn.pixabay.com/photo/2021/07/16/15/10/motorcycle-6471109_1280.jpg" class="img-fluid Ad-img"></div>
+                            <div class="col-sm-12 col-md-6 col-lg-4"><img src="https://cdn.pixabay.com/photo/2023/11/29/20/20/motorcycle-8420282_1280.jpg" class="img-fluid Ad-img"></div>
+                            <div class="col-sm-12 col-md-6 col-lg-4"><img src="https://cdn.pixabay.com/photo/2023/11/29/20/20/motorcycle-8420283_1280.jpg" class="img-fluid Ad-img"></div>
 
-                            <div class="col-4"><img src="https://cdn.pixabay.com/photo/2016/07/20/19/07/superbike-1531024_1280.jpg" class="img-fluid Ad-img"></div>
-                            <div class="col-4"><img src="https://cdn.pixabay.com/photo/2019/12/03/17/36/engine-4670556_1280.jpg" class="img-fluid Ad-img"></div>
-                            <div class="col-4"><img src="https://cdn.pixabay.com/photo/2016/02/02/06/39/burnout-1174864_1280.jpg" class="img-fluid Ad-img"></div>
+                            <div class="col-sm-12 col-md-6 col-lg-4"><img src="https://cdn.pixabay.com/photo/2016/07/20/19/07/superbike-1531024_1280.jpg" class="img-fluid Ad-img"></div>
+                            <div class="col-sm-12 col-md-6 col-lg-4"><img src="https://cdn.pixabay.com/photo/2019/12/03/17/36/engine-4670556_1280.jpg" class="img-fluid Ad-img"></div>
+                            <div class="col-sm-12 col-md-6 col-lg-4 mx-auto"><img src="https://cdn.pixabay.com/photo/2016/02/02/06/39/burnout-1174864_1280.jpg" class="img-fluid Ad-img"></div>
     
                         </div>
                     </div>
@@ -103,176 +128,189 @@
 
                             <!--1 -->
                             <div class="col-12 mx-auto">
-                                <div class="w-50 mx-auto">
-                                    <div class="card">
-                                        <div class="card-header d-flex justify-content-between ">
-                                            <h5>Libertad sobre ruedas</h5>
-                                            <h5>10/2026</h5>
-                                        </div>
-                                        <img src="https://cdn.pixabay.com/photo/2014/04/15/18/37/yamaha-325061_1280.jpg" class="card-img-top" alt="...">
-                                        <div class="card-body">
-                                            <p class="card-text">Lorem ipsum dolor, sit amet consectetur adipisicing elit. 
-                                                Laboriosam modi distinctio perferendis, voluptatibus similique alias dolores ratione consequuntur repudiandae iure veniam quibusdam,
-                                                 sint quos corporis voluptates impedit eligendi maxime cupiditate!</p>
+                                <div class="row">
+                                    <div class="col-sm-12 col-md-8 col-lg-6 mx-auto">
+                                        <div class="card">
+                                            <div class="card-header d-flex justify-content-between flex-wrap">
+                                                <h5>Libertad sobre ruedas</h5>
+                                                <h5>10/2026</h5>
+                                            </div>
+                                            <img src="https://cdn.pixabay.com/photo/2014/04/15/18/37/yamaha-325061_1280.jpg" class="card-img-top" alt="...">
+                                            <div class="card-body">
+                                                <p class="card-text">Lorem ipsum dolor, sit amet consectetur adipisicing elit. 
+                                                    Laboriosam modi distinctio perferendis, voluptatibus similique alias dolores ratione consequuntur repudiandae iure veniam quibusdam,
+                                                    sint quos corporis voluptates impedit eligendi maxime cupiditate!</p>
+                                            </div>
                                         </div>
                                     </div>
-                                </div>
+                                </div>    
                             </div>
 
                             <!--2 -->
                             <div class="col-12 mx-auto">
-                                <div class="w-50 mx-auto">
-                                    <div class="card">
-                                        <div class="card-header d-flex justify-content-between">
-                                            <h5>Pasión por las motos</h5>
-                                            <h5>10/2026</h5>
+                                <div class="row">
+                                    <div class="col-sm-12 col-md-8 col-lg-6 mx-auto">
+                                        <div class="card">
+                                            <div class="card-header d-flex justify-content-between">
+                                                <h5>Pasión por las motos</h5>
+                                                <h5>10/2026</h5>
+                                            </div>
+                                            <img src="https://cdn.pixabay.com/photo/2020/09/10/10/27/motorbike-5559999_1280.jpg" class="card-img-top" alt="...">
+                                            <div class="card-body">
+                                                <p class="card-text">Lorem ipsum dolor, sit amet consectetur adipisicing elit. 
+                                                    Laboriosam modi distinctio perferendis, voluptatibus similique alias dolores ratione consequuntur repudiandae iure veniam quibusdam,
+                                                    sint quos corporis voluptates impedit eligendi maxime cupiditate!</p>
+                                            </div>
                                         </div>
-                                        <img src="https://cdn.pixabay.com/photo/2020/09/10/10/27/motorbike-5559999_1280.jpg" class="card-img-top" alt="...">
-                                        <div class="card-body">
-                                            <p class="card-text">Lorem ipsum dolor, sit amet consectetur adipisicing elit. 
-                                                Laboriosam modi distinctio perferendis, voluptatibus similique alias dolores ratione consequuntur repudiandae iure veniam quibusdam,
-                                                 sint quos corporis voluptates impedit eligendi maxime cupiditate!</p>
-                                        </div>
-                                    </div>
-                                </div>   
+                                    </div>   
+                                </div>    
                             </div>
 
                             <!--3 --> 
                             <div class="col-12 mx-auto">
-                                <div class="w-50 mx-auto">
-                                    <div class="card">
-                                        <div class="card-header d-flex justify-content-between">
-                                            <h5>El rugido del motor</h5>
-                                            <h5>10/2026</h5>
-                                        </div>
-                                        <img src="https://cdn.pixabay.com/photo/2023/08/15/04/09/man-8191214_1280.jpg" class="card-img-top" alt="...">
-                                        <div class="card-body">
-                                            <p class="card-text">Lorem ipsum dolor, sit amet consectetur adipisicing elit. 
-                                                Laboriosam modi distinctio perferendis, voluptatibus similique alias dolores ratione consequuntur repudiandae iure veniam quibusdam,
-                                                 sint quos corporis voluptates impedit eligendi maxime cupiditate!</p>
+                                <div class="row">
+                                    <div class="col-sm-12 col-md-8 col-lg-6 mx-auto">
+                                        <div class="card">
+                                            <div class="card-header d-flex justify-content-between">
+                                                <h5>El rugido del motor</h5>
+                                                <h5>10/2026</h5>
+                                            </div>
+                                            <img src="https://cdn.pixabay.com/photo/2023/08/15/04/09/man-8191214_1280.jpg" class="card-img-top" alt="...">
+                                            <div class="card-body">
+                                                <p class="card-text">Lorem ipsum dolor, sit amet consectetur adipisicing elit. 
+                                                    Laboriosam modi distinctio perferendis, voluptatibus similique alias dolores ratione consequuntur repudiandae iure veniam quibusdam,
+                                                    sint quos corporis voluptates impedit eligendi maxime cupiditate!</p>
+                                            </div>
                                         </div>
                                     </div>
-                                </div>
+                                </div>    
                             </div>
 
                             <!--4 --> 
                             <div class="col-12 mx-auto">
-                                <div class="w-50 mx-auto">
-                                    <div class="card">
-                                        <div class="card-header d-flex justify-content-between">
-                                            <h5>Velocidad sin límites</h5>
-                                            <h5>10/2026</h5>
-                                        </div>
-                                        <img src="https://cdn.pixabay.com/photo/2021/07/16/15/10/motorcycle-6471109_1280.jpg" class="card-img-top" alt="...">
-                                        <div class="card-body">
-                                            <p class="card-text">Lorem ipsum dolor, sit amet consectetur adipisicing elit. 
-                                                Laboriosam modi distinctio perferendis, voluptatibus similique alias dolores ratione consequuntur repudiandae iure veniam quibusdam,
-                                                 sint quos corporis voluptates impedit eligendi maxime cupiditate!</p>
+                                <div class="row">
+                                    <div class="col-sm-12 col-md-8 col-lg-6 mx-auto">
+                                        <div class="card">
+                                            <div class="card-header d-flex justify-content-between">
+                                                <h5>Velocidad sin límites</h5>
+                                                <h5>10/2026</h5>
+                                            </div>
+                                            <img src="https://cdn.pixabay.com/photo/2021/07/16/15/10/motorcycle-6471109_1280.jpg" class="card-img-top" alt="...">
+                                            <div class="card-body">
+                                                <p class="card-text">Lorem ipsum dolor, sit amet consectetur adipisicing elit. 
+                                                    Laboriosam modi distinctio perferendis, voluptatibus similique alias dolores ratione consequuntur repudiandae iure veniam quibusdam,
+                                                    sint quos corporis voluptates impedit eligendi maxime cupiditate!</p>
+                                            </div>
                                         </div>
                                     </div>
-                                </div>
+                                </div>    
                             </div>
 
                             <!--5 --> 
                             <div class="col-12 mx-auto">
-                                <div class="w-50 mx-auto">
-                                    <div class="card">
-                                        <div class="card-header d-flex justify-content-between">
-                                            <h5>Dueña del asfalto</h5>
-                                            <h5>10/2026</h5>
-                                        </div>
-                                        <img src="https://cdn.pixabay.com/photo/2023/11/29/20/20/motorcycle-8420282_1280.jpg" class="card-img-top" alt="...">
-                                        <div class="card-body">
-                                            <p class="card-text">Lorem ipsum dolor, sit amet consectetur adipisicing elit. 
-                                                Laboriosam modi distinctio perferendis, voluptatibus similique alias dolores ratione consequuntur repudiandae iure veniam quibusdam,
-                                                 sint quos corporis voluptates impedit eligendi maxime cupiditate!</p>
+                                <div class="row">
+                                    <div class="col-sm-12 col-md-8 col-lg-6 mx-auto">
+                                        <div class="card">
+                                            <div class="card-header d-flex justify-content-between">
+                                                <h5>Dueña del asfalto</h5>
+                                                <h5>10/2026</h5>
+                                            </div>
+                                            <img src="https://cdn.pixabay.com/photo/2023/11/29/20/20/motorcycle-8420282_1280.jpg" class="card-img-top" alt="...">
+                                            <div class="card-body">
+                                                <p class="card-text">Lorem ipsum dolor, sit amet consectetur adipisicing elit. 
+                                                    Laboriosam modi distinctio perferendis, voluptatibus similique alias dolores ratione consequuntur repudiandae iure veniam quibusdam,
+                                                    sint quos corporis voluptates impedit eligendi maxime cupiditate!</p>
+                                            </div>
                                         </div>
                                     </div>
-                                </div>
+                                </div>    
                             </div>
 
                             <!--6 --> 
                             <div class="col-12 mx-auto">
-                                <div class="w-50 mx-auto">
-                                    <div class="card">
-                                        <div class="card-header d-flex justify-content-between">
-                                            <h5>Potencia en dos ruedas</h5>
-                                            <h5>10/2026</h5>
-                                        </div>
-                                        <img src="https://cdn.pixabay.com/photo/2023/11/29/20/20/motorcycle-8420283_1280.jpg" class="card-img-top" alt="...">
-                                        <div class="card-body">
-                                            <p class="card-text">Lorem ipsum dolor, sit amet consectetur adipisicing elit. 
-                                                Laboriosam modi distinctio perferendis, voluptatibus similique alias dolores ratione consequuntur repudiandae iure veniam quibusdam,
-                                                 sint quos corporis voluptates impedit eligendi maxime cupiditate!</p>
+                                <div class="row">
+                                    <div class="col-sm-12 col-md-8 col-lg-6 mx-auto">
+                                        <div class="card">
+                                            <div class="card-header d-flex justify-content-between">
+                                                <h5>Potencia en dos ruedas</h5>
+                                                <h5>10/2026</h5>
+                                            </div>
+                                            <img src="https://cdn.pixabay.com/photo/2023/11/29/20/20/motorcycle-8420283_1280.jpg" class="card-img-top" alt="...">
+                                            <div class="card-body">
+                                                <p class="card-text">Lorem ipsum dolor, sit amet consectetur adipisicing elit. 
+                                                    Laboriosam modi distinctio perferendis, voluptatibus similique alias dolores ratione consequuntur repudiandae iure veniam quibusdam,
+                                                    sint quos corporis voluptates impedit eligendi maxime cupiditate!</p>
+                                            </div>
                                         </div>
                                     </div>
-                                </div>
+                                </div>    
                             </div>
 
                             <!--7 --> 
                             <div class="col-12 mx-auto">
-                                <div class="w-50 mx-auto">
-                                    <div class="card">
-                                        <div class="card-header d-flex justify-content-between">
-                                            <h5>Pura adrenalina</h5>
-                                            <h5>10/2026</h5>
-                                        </div>
-                                        <img src="https://cdn.pixabay.com/photo/2016/07/20/19/07/superbike-1531024_1280.jpg" class="card-img-top" alt="...">
-                                        <div class="card-body">
-                                            <p class="card-text">Lorem ipsum dolor, sit amet consectetur adipisicing elit. 
-                                                Laboriosam modi distinctio perferendis, voluptatibus similique alias dolores ratione consequuntur repudiandae iure veniam quibusdam,
-                                                 sint quos corporis voluptates impedit eligendi maxime cupiditate!</p>
+                                <div class="row">
+                                    <div class="col-sm-12 col-md-8 col-lg-6 mx-auto">
+                                        <div class="card">
+                                            <div class="card-header d-flex justify-content-between">
+                                                <h5>Pura adrenalina</h5>
+                                                <h5>10/2026</h5>
+                                            </div>
+                                            <img src="https://cdn.pixabay.com/photo/2016/07/20/19/07/superbike-1531024_1280.jpg" class="card-img-top" alt="...">
+                                            <div class="card-body">
+                                                <p class="card-text">Lorem ipsum dolor, sit amet consectetur adipisicing elit. 
+                                                    Laboriosam modi distinctio perferendis, voluptatibus similique alias dolores ratione consequuntur repudiandae iure veniam quibusdam,
+                                                    sint quos corporis voluptates impedit eligendi maxime cupiditate!</p>
+                                            </div>
                                         </div>
                                     </div>
-                                </div>
+                                </div>    
                             </div>
 
                             <!--8 --> 
                             <div class="col-12 mx-auto">
-                                <div class="w-50 mx-auto">
-                                    <div class="card">
-                                        <div class="card-header d-flex justify-content-between">
-                                            <h5>Nacido para rodar</h5>
-                                            <h5>10/2026</h5>
-                                        </div>
-                                        <img src="https://cdn.pixabay.com/photo/2019/12/03/17/36/engine-4670556_1280.jpg" class="card-img-top" alt="...">
-                                        <div class="card-body">
-                                            <p class="card-text">Lorem ipsum dolor, sit amet consectetur adipisicing elit. 
-                                                Laboriosam modi distinctio perferendis, voluptatibus similique alias dolores ratione consequuntur repudiandae iure veniam quibusdam,
-                                                 sint quos corporis voluptates impedit eligendi maxime cupiditate!</p>
+                                <div class="row">
+                                    <div class="col-sm-12 col-md-8 col-lg-6 mx-auto">
+                                        <div class="card">
+                                            <div class="card-header d-flex justify-content-between">
+                                                <h5>Nacido para rodar</h5>
+                                                <h5>10/2026</h5>
+                                            </div>
+                                            <img src="https://cdn.pixabay.com/photo/2019/12/03/17/36/engine-4670556_1280.jpg" class="card-img-top" alt="...">
+                                            <div class="card-body">
+                                                <p class="card-text">Lorem ipsum dolor, sit amet consectetur adipisicing elit. 
+                                                    Laboriosam modi distinctio perferendis, voluptatibus similique alias dolores ratione consequuntur repudiandae iure veniam quibusdam,
+                                                    sint quos corporis voluptates impedit eligendi maxime cupiditate!</p>
+                                            </div>
                                         </div>
                                     </div>
-                                </div>
+                                </div>    
                             </div>
 
                             <!--9--> 
                             <div class="col-12 mx-auto">
-                                <div class="w-50 mx-auto">
-                                    <div class="card">
-                                        <div class="card-header d-flex justify-content-between">
-                                            <h5>Bestia sobre ruedas</h5>
-                                            <h5>10/06</h5>
-                                        </div>
-                                        <img src="https://cdn.pixabay.com/photo/2016/02/02/06/39/burnout-1174864_1280.jpg" class="card-img-top" alt="...">
-                                        <div class="card-body">
-                                            <p class="card-text">Lorem ipsum dolor, sit amet consectetur adipisicing elit. 
-                                                Laboriosam modi distinctio perferendis, voluptatibus similique alias dolores ratione consequuntur repudiandae iure veniam quibusdam,
-                                                 sint quos corporis voluptates impedit eligendi maxime cupiditate!</p>
+                                <div class="row">
+                                    <div class="col-sm-12 col-md-8 col-lg-6 mx-auto">
+                                        <div class="card">
+                                            <div class="card-header d-flex justify-content-between">
+                                                <h5>Bestia sobre ruedas</h5>
+                                                <h5>10/06</h5>
+                                            </div>
+                                            <img src="https://cdn.pixabay.com/photo/2016/02/02/06/39/burnout-1174864_1280.jpg" class="card-img-top" alt="...">
+                                            <div class="card-body">
+                                                <p class="card-text">Lorem ipsum dolor, sit amet consectetur adipisicing elit. 
+                                                    Laboriosam modi distinctio perferendis, voluptatibus similique alias dolores ratione consequuntur repudiandae iure veniam quibusdam,
+                                                    sint quos corporis voluptates impedit eligendi maxime cupiditate!</p>
+                                            </div>
                                         </div>
                                     </div>
-                                </div>
+                                </div>    
                             </div>
     
                         </div>
                     </div>
                 </div>
-
-            </div>
-
-            
-
+            </div> 
         </section>
-
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
     </body>
 </html>
